@@ -2,48 +2,18 @@
   <div class="main-wrapper">
     <div class="main-wrapper__blocks-wrapper">
 
-      <div id="que-1" class="block">
-        <h3>
-          Вопрос1: Что такое двустороннее связывание?
-        </h3>
-        <p>
-          Двустороннее связывание - это связь UI элемента с данными. 
-          При изменении на одном конце "связки" происходят изменеия на другом.
-        </p>
-      </div>
+      <Que1Wrapper/>
+      <Que2Wrapper/>
+      <Que3Wrapper/>
+      <Que4Wrapper/>
+      <Que5Wrapper/>
+      <Que6Wrapper/>
+      <Que7Wrapper/>
+      <Que8Wrapper/>
+      <Que9Wrapper/>
+      <Que10Wrapper/>
 
-
-      <div id="que-2" class="block">
-        <h3>Вопрос2: Какими способами можно реализовать двустороннее связывание для input?</h3>
-
-        <div class="block__solution">
-          <input 
-            :bind="que2Solution1Email"
-            @input="que2Solution1Email = $event.target.value"
-            :value="que2Solution1Email"
-            type="text"
-          >
-          <p>
-            Здесь значение модели 1, которая в будущем изменяется: 
-            <span>{{que2Solution1Email}}</span>
-          </p>
-        </div>
-
-        <div class="block__solution">
-          <input 
-            v-model="que2Solution2Email"
-            type="text"
-          >
-          <p>
-            Здесь значение модели 2, которая в будущем изменяется: 
-            <span>{{que2Solution2Email}}</span>
-          </p>
-        </div>
-
-      </div>
-
-
-      <div class="block">lallala</div>
+      <div id="que-3" class="block">lallala</div>
 
 
       <div class="block">lallala</div>
@@ -62,6 +32,17 @@
 </template>
 
 <script>
+import Que1Wrapper from '@/components/questions/Que1/Que1Wrapper.vue'
+import Que2Wrapper from '@/components/questions/Que2/Que2Wrapper.vue'
+import Que3Wrapper from '@/components/questions/Que3/Que3Wrapper.vue'
+import Que4Wrapper from '@/components/questions/Que4/Que4Wrapper.vue'
+import Que5Wrapper from '@/components/questions/Que5/Que5Wrapper.vue'
+import Que6Wrapper from '@/components/questions/Que6/Que6Wrapper.vue'
+import Que7Wrapper from '@/components/questions/Que7/Que7Wrapper.vue'
+import Que8Wrapper from '@/components/questions/Que8/Que8Wrapper.vue'
+import Que9Wrapper from '@/components/questions/Que9/Que9Wrapper.vue'
+import Que10Wrapper from '@/components/questions/Que10/Que10Wrapper.vue'
+
 export default {
   name: 'MainWrapperBook',
   data(){
@@ -70,6 +51,18 @@ export default {
       que2Solution2Email: 'модель 2'
     }
   },
+  components: {
+    Que1Wrapper,
+    Que2Wrapper,
+    Que3Wrapper,
+    Que4Wrapper,
+    Que5Wrapper,
+    Que6Wrapper,
+    Que7Wrapper,
+    Que8Wrapper,
+    Que9Wrapper,
+    Que10Wrapper,
+  }
 }
 </script>
 
@@ -87,6 +80,18 @@ export default {
 
     span {
       color: #42b983;
+    }
+
+    button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: lavender;
+      border: 1px solid #42b983;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-left: 1.5em;
+      min-height: 50px;
     }
 
     &__blocks-wrapper {
