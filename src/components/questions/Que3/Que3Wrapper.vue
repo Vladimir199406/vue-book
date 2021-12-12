@@ -1,7 +1,7 @@
 <template>
     <div id="que-3" class="block">
         <h3>
-            Вопрос3: Что такое "props"?
+            Вопрос 3: Что такое "props"?
         </h3>
         <p>
             "Props" - входные параметры, 
