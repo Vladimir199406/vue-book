@@ -70,30 +70,6 @@ export default {
 <style lang="scss">
  .main-wrapper{
 
-    h3 {
-      margin: 40px 0 0;
-    }
-
-    a {
-      color: #42b983;
-    }
-
-    span {
-      color: #42b983;
-    }
-
-    button {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: lavender;
-      border: 1px solid #42b983;
-      border-radius: 5px;
-      cursor: pointer;
-      margin-left: 1.5em;
-      min-height: 50px;
-    }
-
     &__blocks-wrapper {
       display: flex;
       flex-wrap: wrap;
@@ -123,12 +99,6 @@ export default {
           border: 2px solid brown;
           margin-top: 20px;
           border-radius: 10px;
-
-          input {
-            height: fit-content;
-            border-radius:5px;
-            padding: 5px;
-          }
         }
 
       }

@@ -9,33 +9,61 @@
 </template>
 
 <style lang="scss">
-h3 {
-  text-align: center;
-}
+  h3 {
+    text-align: center;
+    margin: 40px 0 0;
+  }
 
-p {
-  //text-indent: 1.5em;
-  line-height: 2em;
-}
-
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-  background-color: lightgray;
-}
-
-#nav {
-  padding: 30px;
+  p {
+    //text-indent: 1.5em;
+    line-height: 2em;
+  }
 
   a {
-    font-weight: bold;
-    color: #2c3e50;
+    color: #42b983;
+  }
 
-    &.router-link-exact-active {
-      color: #42b983;
+  span {
+    color: #42b983;
+  }
+
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lavender;
+    border: 1px solid #42b983;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 1.5em;
+    min-height: 50px;
+  }
+
+  input {
+    min-height: 35px;
+    border-radius:5px;
+    padding: 5px;
+    margin: 20px;
+  }
+
+  #app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #2c3e50;
+    background-color: lightgray;
+  }
+
+  #nav {
+    padding: 30px;
+
+    a {
+      font-weight: bold;
+      color: #2c3e50;
+
+      &.router-link-exact-active {
+        color: #42b983;
+      }
     }
   }
-}
 </style>

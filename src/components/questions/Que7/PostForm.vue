@@ -1,5 +1,5 @@
 <template>
-    <form @submit.prevent>
+    <form @submit.prevent class="form-wrapper">
         <p>Создание поста</p>
         <input
             v-model="post.title"
@@ -39,5 +39,9 @@
 </script>
 
 <style scoped lang="scss">
-
+    .form-wrapper {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+    }
 </style>
