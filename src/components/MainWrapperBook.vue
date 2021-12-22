@@ -12,6 +12,7 @@
       <Que8Wrapper/>
       <Que9Wrapper/>
       <Que10Wrapper/>
+      <Que11Wrapper/>
 
       <div id="que-3" class="block">lallala</div>
 
@@ -42,6 +43,7 @@ import Que7Wrapper from '@/components/questions/Que7/Que7Wrapper.vue'
 import Que8Wrapper from '@/components/questions/Que8/Que8Wrapper.vue'
 import Que9Wrapper from '@/components/questions/Que9/Que9Wrapper.vue'
 import Que10Wrapper from '@/components/questions/Que10/Que10Wrapper.vue'
+import Que11Wrapper from '@/components/questions/Que11/Que11Wrapper.vue'
 
 export default {
   name: 'MainWrapperBook',
@@ -62,6 +64,7 @@ export default {
     Que8Wrapper,
     Que9Wrapper,
     Que10Wrapper,
+    Que11Wrapper,
   }
 }
 </script>
