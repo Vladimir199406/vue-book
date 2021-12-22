@@ -17,14 +17,14 @@
                 import VueRouter from 'vue-router'<br>
                 import Book from '../views/Book.vue'<br><br>
                 Vue.use(VueRouter)<br><br>
-                const routes = [<br>
+               const <span>routes</span> = [<br>
                 &emsp;{<br>
-                    &emsp;&emsp;path: '/',<br>
+                    &emsp;&emsp;<span>path: '/'</span>,<br>
                     &emsp;&emsp;name: 'Book',<br>
                     &emsp;&emsp;component: Book<br>
                 &emsp;},<br>
                 &emsp;{<br>
-                    &emsp;&emsp;path: '/about',<br>
+                    &emsp;&emsp;<span>path: '/about'</span>,<br>
                     &emsp;&emsp;name: 'About',<br>
                     &emsp;&emsp;// route level code-splitting<br>
                     &emsp;&emsp;// this generates a separate chunk (about.[hash].js) for this route<br>
@@ -38,6 +38,11 @@
                 export default router<br>
             </pre>
         </p>
+        <p>
+            Далее использование в <span>компоненте: </span> в двойном теге <span>"router-view"</span> 
+            используем для навигации <span>"router-link"</span>.
+        </p>
+        <p>В данном руководстве модель <span>SPA</span> реализована путем использования <span> VUE Router</span> полностью.</p>
     </div>
 </template>
 
