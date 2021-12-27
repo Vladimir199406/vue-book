@@ -16,6 +16,7 @@
       <Que12Wrapper/>
       <Que13Wrapper/>
       <Que14Wrapper/>
+      <Que15Wrapper/>
 
     </div>
   </div>
@@ -36,6 +37,7 @@ import Que11Wrapper from '@/components/questions/Que11/Que11Wrapper.vue'
 import Que12Wrapper from '@/components/questions/Que12/Que12Wrapper.vue'
 import Que13Wrapper from '@/components/questions/Que13/Que13Wrapper.vue'
 import Que14Wrapper from '@/components/questions/Que14/Que14Wrapper.vue'
+import Que15Wrapper from '@/components/questions/Que15/Que15Wrapper.vue'
 
 export default {
   name: 'MainWrapperBook',
@@ -60,6 +62,7 @@ export default {
     Que12Wrapper,
     Que13Wrapper,
     Que14Wrapper,
+    Que15Wrapper,
   }
 }
 </script>
