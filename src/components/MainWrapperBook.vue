@@ -1,7 +1,6 @@
 <template>
   <div class="main-wrapper">
     <div class="main-wrapper__blocks-wrapper">
-
       <Que1Wrapper/>
       <Que2Wrapper/>
       <Que3Wrapper/>
@@ -17,7 +16,7 @@
       <Que13Wrapper/>
       <Que14Wrapper/>
       <Que15Wrapper/>
-
+      <Que16Wrapper/>
     </div>
   </div>
 </template>
@@ -38,6 +37,8 @@ import Que12Wrapper from '@/components/questions/Que12/Que12Wrapper.vue'
 import Que13Wrapper from '@/components/questions/Que13/Que13Wrapper.vue'
 import Que14Wrapper from '@/components/questions/Que14/Que14Wrapper.vue'
 import Que15Wrapper from '@/components/questions/Que15/Que15Wrapper.vue'
+import Que16Wrapper from '@/components/questions/Que16/Que16Wrapper.vue'
+
 
 export default {
   name: 'MainWrapperBook',
@@ -63,6 +64,7 @@ export default {
     Que13Wrapper,
     Que14Wrapper,
     Que15Wrapper,
+    Que16Wrapper,
   }
 }
 </script>
