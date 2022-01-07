@@ -14,6 +14,11 @@
     margin: 40px 0 0;
   }
 
+  h4 {
+    text-align: center;
+    margin: 20px 0 0;
+  }
+
   p {
     //text-indent: 1.5em;
     line-height: 2em;
@@ -21,6 +26,14 @@
 
   a {
     color: #42b983;
+  }
+
+  ul > h4 {
+    margin-bottom: 30px;
+  }
+
+  li {
+    margin: 0 0 20px 30px
   }
 
   span {
@@ -37,6 +50,8 @@
     cursor: pointer;
     margin: 1.5em;
     min-height: 50px;
+    font-weight: 600;
+    width: fit-content;
   }
 
   input {
@@ -44,6 +59,7 @@
     border-radius:5px;
     padding: 5px;
     margin: 20px;
+    background-color: lightgrey;
   }
 
   pre {
@@ -56,7 +72,6 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: #2c3e50;
-    background-color: lightgray;
   }
 
   #nav {
