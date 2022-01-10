@@ -256,14 +256,41 @@
             </div>
         </div>
         <div class="block__solution">
-            <h4>11) Directive: <span>название</span></h4>
+            <h4>11) Directive: <span>v-slot</span></h4>
             <div class="block__flex-column">
-                <p>Текст: <span>выделить</span></p>
-                <ul>
-                    <h4>Вывод:</h4>
-                    <li></li>
-                    <li></li>
-                </ul>
+                <p>Позволяет добавлять динамически разметку в УЖЕ готовый компонент</p>
+                <p>Есть некоторый компонент: "testSlot"</p>
+                <p>! Последующая информация рендерится через систему sloto`v, смотри исходники !</p>
+                <TestSlot>
+                    По умолчанию если слот один, то информация идет в него, 
+                    НО есть возможность добавления множества слотов. 
+                </TestSlot>
+                <TestSlotsMany>
+                    <template v-slot:header>
+                        <h1>При интеграции нескольких слотов, необходимо сделать следующее.</h1>
+                    </template>
+                    <template v-slot:body>
+                        <h4>Шаги для создания:</h4>
+                        <ul>
+                            <li>Создаем слот в компоненте через тег "slot"</li>
+                            <li>Присваиваем тегу "slot" атрибут "name", name="header"</li>
+                            <li>
+                                Вызываем парный тег с именем компоненты и <span>внутри</span>
+                                вызова компоненты используем парный тег "template" с директивой v-slot:имяСозданногоВсамойКомпонентеСлота
+                                </li>
+                            <li></li>
+                        </ul>
+                    </template>
+                    <template v-slot:footer>
+                        <ul>
+                            <h4>Вывод:</h4>
+                            <li>Не нужно именовать слот если информация/разметка полученная слотом в дальнейшем в одном блоке</li>
+                            <li>При использовании нескольких слотов используется атрибут "name"</li>
+                            <li>Элемент "slot" без name неявно получает имя «default».</li>
+
+                        </ul>
+                    </template>
+                </TestSlotsMany>
             </div>
         </div>
         <div class="block__solution">
@@ -314,6 +341,9 @@
 </template>
 
 <script>
+    import TestSlot from './TestSlot.vue'
+    import TestSlotsMany from './TestSlotsMany.vue'
+
     export default {
         name: 'Que16Wrapper',
         data() {
@@ -331,7 +361,10 @@
             }
         },
         mixins: [],
-        components: {},
+        components: {
+            TestSlot,
+            TestSlotsMany,
+        },
         methods: {
             changeMessageVShow() {
                 this.messageVShow ? this.messageVShow = false : this.messageVShow = true;
