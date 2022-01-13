@@ -26,140 +26,14 @@
             <li><span>v-once</span> --> type: <span>---</span>. Отрисовывает один раз элемент или компонент.</li>
             <li><span>v-memo</span> --> type: <span>Array</span>. Мемоизация части поддерева шаблона. Может использоваться как для элементов, так и для компонентов. Директива ожидает массив фиксированной длины зависимых значений, которые станут использоваться для сравнения при мемоизации. Если каждое значение массива осталось таким же, как при последней отрисовке, то обновление всего поддерева будет пропущено.</li>
         </ol>
-        <div class="block__solution">
-            <h4>1) Directive: <span>v-text</span>:</h4>
-            <div class="block__flex-column">
-                <p>
-                    Обновляет свойство элемента textContent (opens new window). 
-                    При необходимости обновления лишь части содержимого textContent 
-                    лучше использовать интерполяцию с фигурными скобками.
-                </p>
-                <ul>
-                    <h4>Вывод:</h4>
-                    <li>v-text: <span v-text="messageVText"> </span></li>
-                    <li>интерполяция в классическом виде: <span>{{messageDoNoUseVText}}</span></li>
-                </ul>
-            </div>
-        </div>
-        <div class="block__solution">
-            <h4>2) Directive: <span>v-html</span></h4>
-            <div class="block__flex-column">
-                <p>Вариант первый, переменная: <span>v-html="messageVhtml"</span></p>
-                <p>Вариант второй, тег: <span>v-html="'div Сообщение /div '"</span></p>
-                <ul>
-                    <h4>Вывод:</h4>
-                    <li v-html="'<div>Учтите, что содержимое будет вставляться как обычный HTML и не будет компилироваться или обрабатываться как шаблоны Vue. <div>'">
-                        Локальные стили (scoped) в однофайловых компонентах также не будут применяться к содержимому v-html, 
-                        потому что этот HTML никак не обрабатывается компилятором шаблонов Vue. 
-                        При необходимости стилизовать содержимое в v-html вместо локального CSS 
-                        можно использовать CSS-модули (opens new window)или указать дополнительный 
-                        глобальный элемент 'style' с собственной стратегией модульности, такой как БЭМ.
-                    </li>
-                    <li v-html="messageVhtml"></li>
-                </ul>
-            </div>
-        </div>
-        <div class="block__solution">
-            <h4>3) Directive: <span>v-show</span></h4>
-            <div class="block__flex-column">
-                <p>Условная отрисовка, которая остается в разметке:</p>
-                <p><span v-show="messageVShow">{{messageVShow}}</span></p>
-                <p><span v-show="!messageVShow">{{messageVShow}}</span></p>
-                <button @click="changeMessageVShow()">Сменить значение messageVShow"</button>
-                <ul>
-                    <h4>Вывод:</h4>
 
-                    <li>Отображает элемент по условию, выполняя переключение у элемента CSS-свойства display в зависимости от истинности указанного выражения.</li>
-                    <li>Директива запускает анимации перехода при изменении состояния.</li>
-                </ul>
-            </div>
-        </div>
-        <div class="block__solution">
-            <h4>4, 5, 6) Directive: <span>v-if, v-else-if, v-else</span></h4>
-            <div class="block__flex-column">
-                <p>Условная отрисовка, которая <strong>НЕ</strong> остается в разметке:</p>
-                <p v-if="messageVShow">{{messageVShow}}</p>
-                <p v-else-if="!messageVShow">{{messageVShow}}</p>
-                <button @click="changeMessageVShow()">Сменить значение messageVShow"</button>
-                <ul>
-                    <h4>Вывод:</h4>
-                    <li>Отрисовывает элемент по условию, в зависимости от истинности указанного выражения. При переключении элемент и все содержащиеся в нём директивы / компоненты будут уничтожены и созданы заново.</li>
-                    <li>Обозначает «блок else if» для v-if. Можно использовать для создания цепочек условий.</li>
-                    <li> <strong>v-else, v-else-if</strong> Ограничение: предыдущий элемент должен иметь директиву v-if или v-else-if.</li>
-                </ul>
-            </div>
-        </div>
-        <div class="block__solution">
-            <h4>7) Directive: <span>v-for</span></h4>
-            <div class="block__flex-column">
-                <div class="block__flex-column--row">
-                    <p>Cписок товаров:&emsp;</p>
-                    <p v-for="item in shop.goods" :key="item.key">
-                        <span>&emsp;{{item}}&emsp;</span>
-                    </p>
-                </div>
-                <ul>
-                    <h4>Вывод:</h4>
-                    <li>
-                        Многократно отрисовывает элемент или блок шаблона на основании исходных данных. 
-                        Значение директивы должно использовать специальный синтаксис alias in expression, 
-                        чтобы объявить переменную для текущего элемента итерации.
-                    </li>
-                    <li> :key="item.key" важный элемент для безопасности итераций, <strong>НЕ</strong> использовать индекс в качестве ключа: (элемент, индексНеИсользоватьКакКлюч) in элементы </li>
-                </ul>
-            </div>
-        </div>
-        <div class="block__solution">
-            <h4>8) Directive: <span>v-on</span></h4>
-            <div class="block__flex-column">
-                <p>Прикрепляет обработчик события к элементу. </p>
-                <ul>
-                    <h4>Аргумент - событие, пример: </h4>
-                    <li>@<span>click</span> - по клику</li>
-                    <li>@<span>submit</span> - при подтверждении на форме</li>
-                    <li>@<span>keyup</span> - по нажатию клавиши</li>
-                    <li>@<span>[event]</span> - динамическое имя события</li>
-                </ul>
-                <ul>
-                    <h4>Модификаторы:</h4>
-                    <li>.stop — вызывает event.stopPropagation().</li>
-                    <li>.prevent — вызывает event.preventDefault().</li>
-                    <li>.capture — отслеживает событие в режиме capture.</li>
-                    <li>.self — вызывает обработчик только если событие произошло именно на этом элементе.</li>
-                    <li>.{keyAlias} — вызывает обработчик только при нажатии определённой клавиши.</li>
-                    <li>.once — вызывает обработчик события только один раз.</li>
-                    <li>.left — вызывает обработчик только по нажатию левой кнопки мыши.</li>
-                    <li>.right — вызывает обработчик только по нажатию правой кнопки мыши.</li>
-                    <li>.middle — вызывает обработчик только по нажатию средней кнопки мыши.</li>
-                    <li>.passive — добавляет обработчик события DOM с опцией { passive: true }.</li>
-                </ul>
-                <p>Модификаторы можно использовать по цепочке: @click.stop.prevent</p>
-                <p>Простейший пример:</p>
-                <button @click="messageVonCounter++"> Обновелние счетчика: <strong> {{messageVonCounter}}</strong> </button>
-                <ul>
-                    <h4>Вывод:</h4>
-                    <li>
-                        Прикрепляет обработчик события к элементу. 
-                        Тип события определяется аргументом. Выражение 
-                        может быть именем метода, инлайн-выражением или 
-                        даже не указываться, при использовании модификаторов.
-                    </li>
-                    <li>
-                        При использовании на обычном элементе отслеживает 
-                        только нативные события DOM (opens new window). 
-                        При использовании на компонентах отслеживает пользовательские 
-                        события, которые были сгенерированы в нём.
-                    </li>
-                    <li>
-                        При отслеживании нативных событий DOM в метод 
-                        аргументом будет передаваться объект события. 
-                        При указании инлайн-выражения, к объекту 
-                        события можно получить доступ через специальное 
-                        свойство $event: v-on:click="handle('ok', $event)".
-                    </li>
-                </ul>
-            </div>
-        </div>
+        <VDirectiveVText :messageDoNoUseVText="messageDoNoUseVText" :messageVText="messageVText"/>
+        <VDirectiveVHtml :messageVhtml="messageVhtml"/>
+        <VDirectiveVShow :messageVShow="messageVShow" :changeMessageVShow="changeMessageVShow"/>
+        <VDirectiveIfElse :messageVShow="messageVShow" :changeMessageVShow="changeMessageVShow"/>
+        <VDirectiveVFor :goods="shop.goods"/>
+        <VDirectiveVOn :messageVonCounter="messageVonCounter"/>
+
         <div class="block__solution">
             <h4>9) Directive: <span>v-bind</span></h4>
             <div class="block__flex-column">
@@ -385,9 +259,15 @@
 </template>
 
 <script>
+    import VDirectiveVText from './directives/VDirectiveVText.vue'
+    import VDirectiveVHtml from './directives/VDirectiveVHtml.vue'
+    import VDirectiveVShow from './directives/VDirectiveVShow.vue'
+    import VDirectiveIfElse from './directives/VDirectiveIfElse.vue'
+    import VDirectiveVFor from './directives/VDirectiveVFor.vue'
+    import VDirectiveVOn from './directives/VDirectiveVOn.vue'
+
     import TestSlot from './TestSlot.vue'
     import TestSlotsMany from './TestSlotsMany.vue'
-
     export default {
         name: 'Que16Wrapper',
         data() {
@@ -408,9 +288,15 @@
         },
         mixins: [],
         components: {
+            VDirectiveVText,
+            VDirectiveVHtml,
+            VDirectiveVShow,
+            VDirectiveIfElse,
+            VDirectiveVFor,
+            VDirectiveVOn,
+
             TestSlot,
-            TestSlotsMany,
-        },
+            TestSlotsMany,        },
         methods: {
             changeMessageVShow() {
                 this.messageVShow ? this.messageVShow = false : this.messageVShow = true;
