@@ -27,6 +27,7 @@
                 :description="description"
                 :number="number"
                 :boolFlag="boolFlag"
+                :arrayToPost="arrayToPost"
                 :humanObj="humanObj"
                 :name="humanObj.name"
                 :sayHi="humanObj.sayHi"
