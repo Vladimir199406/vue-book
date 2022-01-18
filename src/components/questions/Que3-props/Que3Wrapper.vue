@@ -38,7 +38,7 @@
 </template>
 
 <script>
-    import PostWrapper from '@/components/questions/Que3/PostWrapper'
+    import PostWrapper from '@/components/questions/Que3-props/PostWrapper'
 
     export default {
         name: 'Que3Wrapper',

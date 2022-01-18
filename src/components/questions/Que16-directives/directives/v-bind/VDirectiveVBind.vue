@@ -18,9 +18,9 @@
             </ul>
             <p>Простейший пример:</p>
             <input 
-                :bind="messageVBind"
-                :value="messageVBind"
-                @input="messageVBind = $event.target.value"
+                :bind="mutableMessageVBind"
+                :value="mutableMessageVBind"
+                @input="mutableMessageVBind = $event.target.value"
                 type="text"
             >
             <p>Здесь значение модели, которая меняется в динамической связке: <span>{{messageVBind}}</span></p>
@@ -47,7 +47,9 @@
     export default {
         name: 'VDirectiveVBind',
         data(){
-            return {}
+            return {
+                mutableMessageVBind: this.messageVBind,
+            }
         },
         components: {},
         props: [

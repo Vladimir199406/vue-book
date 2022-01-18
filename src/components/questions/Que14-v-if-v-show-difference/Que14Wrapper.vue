@@ -5,7 +5,7 @@
         </h3>
         <div class="block__solution">
            <h4>
-                <span>v-if</span>block
+                <span>v-if </span> block
            </h4>
            <p>
                Согласно стандартной парадигме программирования существуют
@@ -29,7 +29,7 @@
         </div>
         <div class="block__solution">
             <h4>
-                <span>v-show</span>block
+                <span>v-show </span> block
            </h4>
            <p>Для каждого блока условия создается свой <span>v-show</span> + условие</p>
            <p>
