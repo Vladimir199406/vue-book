@@ -1,6 +1,9 @@
 <template>
   <div class="main-wrapper">
     <div class="main-wrapper__blocks-wrapper">
+      <Que17Wrapper/>
+
+
       <Que1Wrapper/>
       <Que2Wrapper/>
       <Que3Wrapper/>
@@ -38,6 +41,7 @@ import Que13Wrapper from '@/components/questions/Que13-conditional-rendering/Que
 import Que14Wrapper from '@/components/questions/Que14-v-if-v-show-difference/Que14Wrapper.vue'
 import Que15Wrapper from '@/components/questions/Que15-mixin/Que15Wrapper.vue'
 import Que16Wrapper from '@/components/questions/Que16-directives/Que16Wrapper.vue'
+import Que17Wrapper from '@/components/questions/Que17-vuex/Que17Wrapper.vue'
 
 
 export default {
@@ -65,6 +69,8 @@ export default {
     Que14Wrapper,
     Que15Wrapper,
     Que16Wrapper,
+    Que17Wrapper,
+
   }
 }
 </script>
