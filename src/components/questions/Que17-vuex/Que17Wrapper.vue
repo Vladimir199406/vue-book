@@ -106,6 +106,27 @@
                         import { mapState, mapGetters, mapActions, mapMutations } from 'vuex'
                     </pre>
                 </p>
+                <p>
+                    Работаем с Vuex:
+                    <br> 
+                    <pre>
+
+                        async mounted() {
+                            this.fetchPosts(4); // res async logic from vuex
+                        },
+                        mixins: [],
+                        components: {
+                            PostForm,
+                        },
+                        methods: {
+                            ...mapActions(['fetchPosts']),
+                        } ,
+                        computed: {
+                            ...mapGetters(['validPosts', 'postsCount']),
+                        },
+                        watch: {},
+                    </pre>
+                </p>
                 <p>Количество постов {{postsCount}}</p>
                 <p class="block__solution--error">!!! Remember that NO VALIDATION is working now, just getting filtered data by getter !!!</p>
                 <PostForm/>
@@ -141,7 +162,6 @@
             this.postsWithoutVuex = await res.json(); // res async logic local
 
             this.fetchPosts(4); // res async logic from vuex
-
         },
         mixins: [],
         components: {
