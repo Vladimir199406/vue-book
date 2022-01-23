@@ -25,7 +25,7 @@
             </ul>
             <p>Модификаторы можно использовать по цепочке: @click.stop.prevent</p>
             <p>Простейший пример:</p>
-            <button @click="mutableProp++"> Обновелние счетчика: <strong> {{mutableProp}}</strong> </button>
+            <button @click="mutableMessageVonCounter++"> Обновелние счетчика: <strong> {{mutableMessageVonCounter}}</strong> </button>
             <ul>
                 <h4>Вывод:</h4>
                 <li>
@@ -57,7 +57,7 @@
         name: 'VDirectiveVOn',
         data(){
             return {
-                mutableProp: this.messageVonCounter,
+                mutableMessageVonCounter: this.messageVonCounter,
                 //do not change prop, use a mutate copy
             }
         },

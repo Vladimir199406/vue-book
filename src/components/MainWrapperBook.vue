@@ -1,7 +1,9 @@
 <template>
   <div class="main-wrapper">
     <div class="main-wrapper__blocks-wrapper">
-            <Que16Wrapper/>
+      <Que17Wrapper/>
+
+
       <Que1Wrapper/>
       <Que2Wrapper/>
       <Que3Wrapper/>
@@ -23,22 +25,23 @@
 </template>
 
 <script>
-import Que1Wrapper from '@/components/questions/Que1/Que1Wrapper.vue'
-import Que2Wrapper from '@/components/questions/Que2/Que2Wrapper.vue'
-import Que3Wrapper from '@/components/questions/Que3/Que3Wrapper.vue'
-import Que4Wrapper from '@/components/questions/Que4/Que4Wrapper.vue'
-import Que5Wrapper from '@/components/questions/Que5/Que5Wrapper.vue'
-import Que6Wrapper from '@/components/questions/Que6/Que6Wrapper.vue'
-import Que7Wrapper from '@/components/questions/Que7/Que7Wrapper.vue'
-import Que8Wrapper from '@/components/questions/Que8/Que8Wrapper.vue'
-import Que9Wrapper from '@/components/questions/Que9/Que9Wrapper.vue'
-import Que10Wrapper from '@/components/questions/Que10/Que10Wrapper.vue'
-import Que11Wrapper from '@/components/questions/Que11/Que11Wrapper.vue'
-import Que12Wrapper from '@/components/questions/Que12/Que12Wrapper.vue'
-import Que13Wrapper from '@/components/questions/Que13/Que13Wrapper.vue'
-import Que14Wrapper from '@/components/questions/Que14/Que14Wrapper.vue'
-import Que15Wrapper from '@/components/questions/Que15/Que15Wrapper.vue'
-import Que16Wrapper from '@/components/questions/Que16/Que16Wrapper.vue'
+import Que1Wrapper from '@/components/questions/Que1-bind/Que1Wrapper.vue'
+import Que2Wrapper from '@/components/questions/Que2-ways-to-bind/Que2Wrapper.vue'
+import Que3Wrapper from '@/components/questions/Que3-props/Que3Wrapper.vue'
+import Que4Wrapper from '@/components/questions/Que4-reactive/Que4Wrapper.vue'
+import Que5Wrapper from '@/components/questions/Que5-composition-API/Que5Wrapper.vue'
+import Que6Wrapper from '@/components/questions/Que6-vmodel-vue2-vue3/Que6Wrapper.vue'
+import Que7Wrapper from '@/components/questions/Que7-emit/Que7Wrapper.vue'
+import Que8Wrapper from '@/components/questions/Que8-vue-router/Que8Wrapper.vue'
+import Que9Wrapper from '@/components/questions/Que9-computed/Que9Wrapper.vue'
+import Que10Wrapper from '@/components/questions/Que10-watch/Que10Wrapper.vue'
+import Que11Wrapper from '@/components/questions/Que11-watch-deep/Que11Wrapper.vue'
+import Que12Wrapper from '@/components/questions/Que12-interpolation/Que12Wrapper.vue'
+import Que13Wrapper from '@/components/questions/Que13-conditional-rendering/Que13Wrapper.vue'
+import Que14Wrapper from '@/components/questions/Que14-v-if-v-show-difference/Que14Wrapper.vue'
+import Que15Wrapper from '@/components/questions/Que15-mixin/Que15Wrapper.vue'
+import Que16Wrapper from '@/components/questions/Que16-directives/Que16Wrapper.vue'
+import Que17Wrapper from '@/components/questions/Que17-vuex/Que17Wrapper.vue'
 
 
 export default {
@@ -66,6 +69,8 @@ export default {
     Que14Wrapper,
     Que15Wrapper,
     Que16Wrapper,
+    Que17Wrapper,
+
   }
 }
 </script>
@@ -103,6 +108,12 @@ export default {
           border: 2px solid brown;
           margin-top: 20px;
           border-radius: 10px;
+
+          &--error {
+            color: brown;
+            text-shadow: rosybrown;
+          }
+
         }
 
       }
