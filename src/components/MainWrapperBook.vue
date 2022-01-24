@@ -1,8 +1,6 @@
 <template>
   <div class="main-wrapper">
     <div class="main-wrapper__blocks-wrapper">
-      <Que17Wrapper/>
-
 
       <Que1Wrapper/>
       <Que2Wrapper/>
@@ -20,6 +18,9 @@
       <Que14Wrapper/>
       <Que15Wrapper/>
       <Que16Wrapper/>
+      <Que17Wrapper/>
+      <Que18Wrapper/>
+
     </div>
   </div>
 </template>
@@ -42,6 +43,7 @@ import Que14Wrapper from '@/components/questions/Que14-v-if-v-show-difference/Qu
 import Que15Wrapper from '@/components/questions/Que15-mixin/Que15Wrapper.vue'
 import Que16Wrapper from '@/components/questions/Que16-directives/Que16Wrapper.vue'
 import Que17Wrapper from '@/components/questions/Que17-vuex/Que17Wrapper.vue'
+import Que18Wrapper from '@/components/questions/Que18-object-field-watch/Que18Wrapper.vue'
 
 
 export default {
@@ -70,6 +72,7 @@ export default {
     Que15Wrapper,
     Que16Wrapper,
     Que17Wrapper,
+    Que18Wrapper,
 
   }
 }
