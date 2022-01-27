@@ -80,49 +80,5 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
- .main-wrapper{
-
-    &__blocks-wrapper {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      //flex-direction: row;
-      flex-direction: column;
-      align-items: center;
-
-      .block {
-        display: flex;
-        justify-content: flex-start;
-        flex-direction: column;
-        padding: 20px;
-        min-height:fit-content;
-        min-width:300px;
-        max-width: 800px;
-        margin: 30px;
-        border: 2px solid #42b983;
-        border-radius: 10px;
-
-        &__solution {
-          display: flex;
-          flex-direction: column;
-          justify-content: flex-start;
-          align-items: center;
-          padding: 20px;
-          border: 2px solid brown;
-          margin-top: 20px;
-          border-radius: 10px;
-
-          &--error {
-            color: brown;
-            text-shadow: rosybrown;
-          }
-
-        }
-
-      }
-
-    }
-
-  }
 
 </style>

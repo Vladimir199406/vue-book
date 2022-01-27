@@ -72,9 +72,6 @@
 <style scoped lang="scss">
     .block {
         &__solution {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
             
             &--list {
                 display: flex;

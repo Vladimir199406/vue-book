@@ -90,6 +90,9 @@
                     border-top: 1px solid black;
 
                     &__text {
+                        display: flex;
+                        flex-direction: column;
+                        flex-wrap: wrap;
                         padding-left: 20px;
                         font-size: 16px;
                         font-weight: 400;
