@@ -21,14 +21,14 @@
                 </div>
                 <div>
                     <pre>
-                        <span>watch:</span> {<br>
-                        &emsp;<span>user:</span> {<br>
-                        &emsp;&emsp;<span>handler</span>(newValue) {<br>
-                        &emsp;&emsp;&emsp;console.log(newValue);<br>
-                        &emsp;&emsp;},<br>
-                        &emsp;&emsp;deep: true <br>
-                        &emsp;},<br>
-                        },<br>
+                        <span>watch:</span> {
+                        &emsp;<span>user:</span> {
+                        &emsp;&emsp;<span>handler</span>(newValue) {
+                        &emsp;&emsp;&emsp;console.log(newValue);
+                        &emsp;&emsp;},
+                        &emsp;&emsp;deep: true 
+                        &emsp;},
+                        },
                     </pre>
                 </div>
             </section>

@@ -13,29 +13,29 @@
         </p>
 
         <pre>
-            import Vue from 'vue'<br>
-            import VueRouter from 'vue-router'<br>
-            import Book from '../views/Book.vue'<br><br>
-            Vue.use(VueRouter)<br><br>
-            const <span>routes</span> = [<br>
-            &emsp;{<br>
-                &emsp;&emsp;<span>path: '/'</span>,<br>
-                &emsp;&emsp;name: 'Book',<br>
-                &emsp;&emsp;component: Book<br>
-            &emsp;},<br>
-            &emsp;{<br>
-                &emsp;&emsp;<span>path: '/about'</span>,<br>
-                &emsp;&emsp;name: 'About',<br>
-                &emsp;&emsp;// route level code-splitting<br>
-                &emsp;&emsp;// this generates a separate chunk (about.[hash].js) for this route<br>
-                &emsp;&emsp;// which is lazy-loaded when the route is visited.<br>
-            &emsp; &emsp;component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')<br>
-            &emsp;}<br>
-            ]<br>
-            const router = new VueRouter({<br>
-            routes<br>
-            })<br><br>
-            export default router<br>
+            import Vue from 'vue'
+            import VueRouter from 'vue-router'
+            import Book from '../views/Book.vue'
+            Vue.use(VueRouter)
+            const <span>routes</span> = [
+            &emsp;{
+                &emsp;&emsp;<span>path: '/'</span>,
+                &emsp;&emsp;name: 'Book',
+                &emsp;&emsp;component: Book
+            &emsp;},
+            &emsp;{
+                &emsp;&emsp;<span>path: '/about'</span>,
+                &emsp;&emsp;name: 'About',
+                &emsp;&emsp;// route level code-splitting
+                &emsp;&emsp;// this generates a separate chunk (about.[hash].js) for this route
+                &emsp;&emsp;// which is lazy-loaded when the route is visited.
+            &emsp; &emsp;component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+            &emsp;}
+            ]
+            const router = new VueRouter({
+            routes
+            })
+            export default router
         </pre>
 
         <p>

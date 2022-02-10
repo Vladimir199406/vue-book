@@ -10,6 +10,11 @@
 
 <style lang="scss">
 
+  body {
+    background: -webkit-linear-gradient(90deg, #edefee,#c9c9c9);
+    background: linear-gradient(90deg, #edefee,#c9c9c9);
+  }
+
   h3 {
     font-weight: 500;
     font-style: normal;
@@ -34,6 +39,7 @@
     font-style: normal;
     font-size: 16px;
     line-height: 18px;
+    padding: 0px 30px;
   }
 
   a {
@@ -44,8 +50,13 @@
     color: #42b983;
   }
 
+  ul {
+    padding: 0px 30px;
+  }
+
   ul > h4 {
     margin-bottom: 30px;
+    padding-left: 0px;
   }
 
   li {
@@ -61,7 +72,7 @@
     justify-content: center;
     align-items: center;
     background-color: lavender;
-    border: 1px solid #42b983;
+    border: 2px solid #42b983;
     border-radius: 5px;
     cursor: pointer;
     margin: 1.5em;
@@ -78,6 +89,7 @@
   button:hover {
     background-color: #5495f1;
     color: white;
+    border: solid #5495f1;
   }
 
   input {
@@ -85,7 +97,9 @@
     border-radius:5px;
     padding: 5px;
     margin: 20px;
-    background-color: lightgrey;
+    background-color: lavender;
+    font-weight: 600;
+    padding: 10px;
   }
 
   pre {
@@ -160,6 +174,15 @@
   }
 
   @media screen and (min-width: 768px) {
+
+    p {
+      padding: 0px;
+    }
+
+    ul {
+      padding: 0px;
+    }
+
     .main-wrapper{
       .block {
         border: 5px solid #42b983;
@@ -179,7 +202,9 @@
     pre {
       display: unset;
       white-space: pre-wrap;
-      line-height: 12px;
+      line-height: 20px;
+      font-size: 14px;
+      font-weight: 500;
     }
     .main-wrapper{
       .block {
