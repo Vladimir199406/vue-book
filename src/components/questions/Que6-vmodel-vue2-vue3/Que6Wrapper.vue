@@ -59,13 +59,13 @@
         &__table {
             margin-top: 30px;
             width: 100%;
-            display: flex;
-            border: 1px solid black;
+            display: unset;
+            border: none;
             border-radius: 5px;
         }
 
         &__table-column:first-child {
-            border-right: 1px solid black;
+            border-right: none;
         }
 
         &__table-column {
@@ -90,6 +90,9 @@
                     border-top: 1px solid black;
 
                     &__text {
+                        display: flex;
+                        flex-direction: column;
+                        flex-wrap: wrap;
                         padding-left: 20px;
                         font-size: 16px;
                         font-weight: 400;
@@ -98,6 +101,19 @@
 
                 }
 
+            }
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+        .block {
+            &__table {
+                display: flex;
+                border: 1px solid black;
+            }
+
+            &__table-column:first-child {
+                border-right: 1px solid black;
             }
         }
     }

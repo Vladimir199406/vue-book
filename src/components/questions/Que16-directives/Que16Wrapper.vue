@@ -120,11 +120,13 @@
         &__flex-column {
             display: flex;
             flex-direction: column;
+            flex-wrap: wrap;
             justify-content: space-between;
             margin: 30px;
 
             &--row {
                 display: flex;
+                flex-wrap: wrap;
                 flex-direction: row;
             }
         }

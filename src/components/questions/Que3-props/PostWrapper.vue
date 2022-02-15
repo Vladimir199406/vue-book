@@ -65,9 +65,16 @@
 
         &__block-with-content {
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             justify-content: flex-start;
         }
-        
+    }
+
+    @media screen and (min-width: 768px) {
+        .post-wrapper {
+            &__block-with-content {
+                flex-direction: row;
+            }
+        }
     }
 </style>

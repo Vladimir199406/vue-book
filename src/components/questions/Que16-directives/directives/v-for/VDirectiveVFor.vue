@@ -1,7 +1,6 @@
 <template>
     <div class="block__solution">
         <h4>7) Directive: <span>v-for</span></h4>
-        <div class="block__flex-column">
             <div class="block__flex-column--row">
                 <p>Cписок товаров:&emsp;</p>
                 <p v-for="item in goods" :key="item.key">
@@ -17,7 +16,6 @@
                 </li>
                 <li> :key="item.key" важный элемент для безопасности итераций, <strong>НЕ</strong> использовать индекс в качестве ключа: (элемент, индексНеИсользоватьКакКлюч) in элементы </li>
             </ul>
-        </div>
     </div>
 </template>
 

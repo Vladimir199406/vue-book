@@ -10,7 +10,7 @@
         <div class="block__solution">
             <p>Смотри в консоль ===> </p>
             <input v-model="user.address.street" type="text">
-            <section class="block__solution--flex-row">
+            <section class="block__solution--flex">
                 <div>
                     <p>
                         Слежение за глубокими объектами
@@ -21,14 +21,14 @@
                 </div>
                 <div>
                     <pre>
-                        <span>watch:</span> {<br>
-                        &emsp;<span>user:</span> {<br>
-                        &emsp;&emsp;<span>handler</span>(newValue) {<br>
-                        &emsp;&emsp;&emsp;console.log(newValue);<br>
-                        &emsp;&emsp;},<br>
-                        &emsp;&emsp;deep: true <br>
-                        &emsp;},<br>
-                        },<br>
+                        <span>watch:</span> {
+                        &emsp;<span>user:</span> {
+                        &emsp;&emsp;<span>handler</span>(newValue) {
+                        &emsp;&emsp;&emsp;console.log(newValue);
+                        &emsp;&emsp;},
+                        &emsp;&emsp;deep: true 
+                        &emsp;},
+                        },
                     </pre>
                 </div>
             </section>
@@ -64,15 +64,16 @@
 </script>
 
 <style scoped lang="scss">
+
     .block {
         &__solution{
-            &--flex-row {
+            &--flex {
                 display: flex;
-                flex-direction: row;
-                justify-content: space-between;
+                width: 100%;
+                flex-direction: column;
 
                 & > div {
-                   width: 50%; 
+                   width: 100%; 
 
                    &:last-child {
                        margin-top: 20px;
@@ -82,4 +83,25 @@
 
         }
     }
+
+    @media screen and (min-width: 768px) {
+        .block__solution--flex {
+            flex-direction: row;
+            justify-content: space-between;
+
+            & > div {
+                   width: 50%; 
+
+                   &:last-child {
+                       margin-top: 20px;
+                   }
+                }
+
+        }
+    }
+
+    @media screen and (min-width: 1280px) {
+
+    }
+
 </style>
