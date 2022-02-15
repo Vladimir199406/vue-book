@@ -109,6 +109,89 @@
             <br>
             <strong>Смотри в консоль ---> </strong>
         </p>
+        <p>
+            <strong> 
+                <span>beforeUpdate:</span><br><br> 
+            </strong>
+                Хук beforeUpdate запускается после изменения данных вашего компонента 
+                и начала цикла обновления и до исправления и повторного рендеринга модели DOM. 
+                <br><br>
+                Используйте beforeUpdate, если вам нужно получить новое состояние любых 
+                реактивных данных вашего компонента до фактического рендеринга.
+                <br><br>
+            <pre>
+                <br><br>
+                <span>export default</span> {
+                    data() {
+                        return {
+                        counterBeforeUpdate: 0
+                        }
+                    },
+
+                    created() {
+                        setInterval(() => {
+                        this.counterBeforeUpdate++
+                        }, 1000)
+                    },
+
+                    beforeUpdate() {
+                        console.log(`BEFORE-UPDATE: At this point, Virtual DOM has not re-rendered or patched yet.`)
+                        // Logs the counterBeforeUpdate value every second, before the DOM updates.
+                        console.log(this.counterBeforeUpdate)
+                    }
+                } 
+            </pre>
+            <br>
+            <br>
+                Вначале этот код сохраняет counter со значением <span>0</span>. 
+                Когда запускается хук created, он инкрементально увеличивает <span>{{counterBeforeUpdate}}</span>
+                значение counterBeforeUpdate каждые <span>1000</span> мс. При запуске хука beforeUpdate 
+                этот код регистрирует сообщение: At this point, Virtual DOM has 
+                not re-rendered or patched yet. и регистрирует числовое значение counter.
+                <br>
+                <br>
+            <strong>Смотри в консоль ---> </strong>
+        </p>
+        <p>
+            <strong> 
+                <span>updated:</span><br><br> 
+            </strong>
+                Хук updated запускается после изменения данных вашего компонента 
+                и повторного рендеринга DOM.
+                <br><br>
+                Используйте updated, если вам требуется доступ к DOM после изменения свойства:
+                <br><br>
+            <pre>
+                <br><br>
+                <span>export default</span> {
+                    data() {
+                        return {
+                        counterUpdated: 0
+                        }
+                    },
+
+                    created() {
+                        setInterval(() => {
+                        this.counterUpdated++
+                        }, 1000)
+                    },
+
+                    updated() {
+                        console.log(`UPDATED: At this point, Virtual DOM has re-rendered and patched.`)
+                    }
+                } 
+            </pre>
+            <br>
+            <br>
+                Вначале этот код сохраняет counterUpdated со значением <span>0</span>. 
+                Когда запускается хук created, он инкрементально увеличивает <span ref="updated-element">{{counterUpdated}}</span>
+                значение counterUpdated каждые <span>1000</span> мс. При запуске хука updated 
+                этот код регистрирует сообщение: At this point, Virtual DOM has 
+                re-rendered and patched.
+                <br>
+                <br>
+            <strong>Смотри в консоль ---> </strong>
+        </p>
     </div>
 </template>
 
@@ -119,7 +202,9 @@
 
         data(){
             return {
-                property: 'Example property'
+                property: 'Example property',
+                counterBeforeUpdate: 0,
+                counterUpdated: 0,
             }
         },
 
@@ -136,6 +221,23 @@
         created() {
             console.log('Я появляюсь в хуке "created" At this point, this.property is now reactive and propertyComputed will update.')
             this.property = 'Example property updated.'
+            
+            setInterval(() => {
+                if (this.counterBeforeUpdate !== 10) {
+                    this.counterBeforeUpdate++
+                } else {
+                    return;
+                }
+            }, 1000),
+
+            setInterval(() => {
+                if (this.counterUpdated !== 10) {
+                    this.counterUpdated++
+                } else {
+                    return;
+                }
+            }, 1000)
+
         },
 
         beforeMount() {
@@ -144,7 +246,17 @@
 
         mounted() {
             console.log(`At this point, vm.$el has been created and el has been replaced.`);
-            console.log(this.$el.textContent) // Example component.
+            //console.log(this.$el.textContent) // Example component console all data in comp.
+        },
+
+        
+        beforeUpdate() {
+            console.log(`BEFORE-UPDATE: At this point, Virtual DOM has NOT re-rendered or patched yet.`, this.counterBeforeUpdate)
+            // Logs the counterBeforeUpdate value every second, before the DOM updates.
+        },
+
+        updated() {
+            console.log(`UPDATED: At this point, Virtual DOM has re-rendered and patched.`, this.counterUpdated)
         }
     }
 </script>
