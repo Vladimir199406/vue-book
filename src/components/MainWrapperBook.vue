@@ -1,6 +1,9 @@
 <template>
   <div class="main-wrapper">
     <div class="main-wrapper__blocks-wrapper">
+      <Que20Wrapper/>
+
+
       <Que1Wrapper/>
       <Que2Wrapper/>
       <Que3Wrapper/>
@@ -44,6 +47,7 @@ import Que16Wrapper from '@/components/questions/Que16-directives/Que16Wrapper.v
 import Que17Wrapper from '@/components/questions/Que17-vuex/Que17Wrapper.vue'
 import Que18Wrapper from '@/components/questions/Que18-object-field-watch/Que18Wrapper.vue'
 import Que19Wrapper from '@/components/questions/Que19-lifecycle-hooks/Que19Wrapper.vue'
+import Que20Wrapper from '@/components/questions/Que20-animations/Que20Wrapper.vue'
 
 
 export default {
@@ -74,6 +78,7 @@ export default {
     Que17Wrapper,
     Que18Wrapper,
     Que19Wrapper,
+    Que20Wrapper,
 
   }
 }
