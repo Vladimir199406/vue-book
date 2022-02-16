@@ -192,6 +192,73 @@
                 <br>
             <strong>Смотри в консоль ---> </strong>
         </p>
+        <p>
+            <strong> 
+                <span>beforeDestroy:</span><br><br> 
+            </strong>
+                beforeDestroy срабатывает прямо перед уничтожением. 
+                Ваш компонент все еще присутствует и полностью функционален.
+                <br><br>
+                Используйте beforeDestroy, если вам нужно 
+                очистить события или реактивные подписки.
+                <br><br>
+            <pre>
+                <br><br>
+                <span>export default</span> {
+                    data() {
+                        return {
+                        exampleLeakyProperty: 'This represents a property that will leak memory if not cleaned up.'
+                        }
+                    },
+
+                    beforeDestroy() {
+                        console.log(`At this point, watchers, child components, and event listeners have not been teared down yet.`)
+                        // Perform the teardown procedure for exampleLeakyProperty.
+                        // (In this case, effectively nothing)
+                        this.exampleLeakyProperty = null
+                        delete this.exampleLeakyProperty
+                    }
+                } 
+            </pre>
+            <br>
+            <br>
+                Этот код вначале сохраняет exampleLeakyProperty. 
+                При запуске хука beforeDestroy код регистрирует сообщение 
+                At this point, watchers, child components, and event listeners 
+                have not been torn down yet. и удаляет свойство exampleLeakyProperty
+                <br>
+                <br>
+                exampleLeakyProperty: <span>{{exampleLeakyProperty}}</span>
+                <br>
+                <br>
+            <strong>Смотри в консоль ---> </strong>
+        </p>
+        <p>
+            <strong> 
+                <span>destroyed:</span><br><br> 
+            </strong>
+                Когда вы достигнете хука destroyed, 
+                от вашего компонента уже практически ничего не останется. 
+                Все, что было к нему прикреплено, будет уничтожено.
+                <br><br>
+                Используйте destroyed, если вам необходимо 
+                провести заключительную очистку или сообщить 
+                удаленному серверу об уничтожении компонента.
+        </p>
+        <p>
+            <strong> 
+                <span>activated и deactivated:</span><br><br> 
+            </strong>
+                Также имеется два других хука, activated и deactivated. 
+                <br><br>
+                Достаточно сказать, что они позволяют определит, 
+                когда компонент внутри тега <span>keep-alive</span>
+                включается и выключается. Вы можете использовать их для 
+                доставки данных для вашего компонента или обработки изменений 
+                состояния, в результате чего они будут вести себя как created 
+                и beforeDestroy без необходимости полной перестройки компонентов.
+        </p>
+        <strong> СМОТРИ раздел "Продвинутые вопросы !" </strong>
     </div>
 </template>
 
@@ -205,6 +272,7 @@
                 property: 'Example property',
                 counterBeforeUpdate: 0,
                 counterUpdated: 0,
+                exampleLeakyProperty: 'This represents a property that will leak memory if not cleaned up.'
             }
         },
 
@@ -257,6 +325,14 @@
 
         updated() {
             console.log(`UPDATED: At this point, Virtual DOM has re-rendered and patched.`, this.counterUpdated)
+        },
+
+        beforeDestroy() {
+            console.log(`BEFORE-DESTROY: At this point, watchers, child components, and event listeners have not been teared down yet.`)
+            // Perform the teardown procedure for exampleLeakyProperty.
+            // (In this case, effectively nothing)
+            this.exampleLeakyProperty = null
+            delete this.exampleLeakyProperty
         }
     }
 </script>
