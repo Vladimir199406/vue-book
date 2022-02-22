@@ -1,6 +1,18 @@
 <template>
   <div class="main-wrapper">
     <div class="main-wrapper__blocks-wrapper">
+<<<<<<< Updated upstream
+=======
+
+
+      <Que17Wrapper/>
+
+
+
+      <Que20Wrapper/>
+
+
+>>>>>>> Stashed changes
       <Que1Wrapper/>
       <Que2Wrapper/>
       <Que3Wrapper/>
