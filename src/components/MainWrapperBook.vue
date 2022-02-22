@@ -1,6 +1,9 @@
 <template>
   <div class="main-wrapper">
     <div class="main-wrapper__blocks-wrapper">
+      <Que17Wrapper/>
+      
+      <Que20Wrapper/>
       <Que1Wrapper/>
       <Que2Wrapper/>
       <Que3Wrapper/>
